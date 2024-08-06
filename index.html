@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('images/anna-sullivan-BBHIPz-gPXs-unsplash.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            transition: color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header:hover {
+            color: chocolate;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+        nav a:hover {
+            color: chocolate;
+        }
+        nav a.active {
+            color: chocolate;
+            text-decoration: underline;
+        }
+        main {
+            padding: 2em;
+            text-align: center;
+        }
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .tiles-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .tile {
+            background-color: chocolate;
+            color: white;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .tile:hover {
+            transform: scale(1.1);
+        }
+        .tile:hover .tile-content {
+            display: block;
+        }
+        .tile-content {
+            display: none;
+            margin-top: 10px;
+            color: black;
+            text-align: left;
+        }
+        .read-more {
+            background-color: chocolate;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .read-more:hover {
+            
+            background-color: #fff;
+            color: chocolate;
+            border: 2px solid chocolate;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.addEventListener('click', function() {
+                    links.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>THE JUDICIARY</h1>
+    </header>
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="login.php">Login</a>
+        <a href="register.php">Register</a>
+    </nav>
+    <main>
+        
+        <h1 style="color: chocolate; font-size: 50px;">JUSTICE BE OUR SHIELD AND DEFENDER</h1>
+        <p style="text-align: center; text-transform: capitalize; font-size: 30px; color:#000;">MAINTAIN JUSTICE</p>    
+        <div class="tiles-container">
+            <div class="tile police">
+                POLICE
+                <div class="tile-content">
+                    <p>Police access</p>
+                    <a href="login.php" class="read-more">Know More</a>
+                </div>
+            </div>
+            
+            <div class="tile lawyer">
+                LAWYER
+                <div class="tile-content">
+                    <p>Lawyers access</p>
+                    <a href="login.php" class="read-more">Know More</a>
+                </div>
+            </div>
+            
+            
+            <div class="tile judge">
+                JUDGE
+                <div class="tile-content">
+                    <p>Judges access</p>
+                    <a href="login.php" class="read-more">Know More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 THE JUDICIARY</p>
+    </footer>
+</body>
+</html>
+
